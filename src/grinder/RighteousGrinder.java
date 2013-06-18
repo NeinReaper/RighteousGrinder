@@ -5,21 +5,12 @@ import grinder.nodes.Banking;
 import grinder.nodes.Grind;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.ItemSelectable;
-import java.io.IOException;
-import java.net.URL;
-import javax.imageio.ImageIO;
-
 import org.powerbot.core.script.ActiveScript;
-import org.powerbot.core.script.job.Task;
 import org.powerbot.core.script.job.state.Node;
 import org.powerbot.game.api.Manifest;
 import org.powerbot.game.api.methods.input.Mouse;
-import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.core.event.listeners.PaintListener;
 
 @Manifest(authors = {"Right"}, name = "Righteous Grinder", description = "Grinds")
@@ -32,6 +23,8 @@ public class RighteousGrinder extends ActiveScript implements PaintListener{
 			sleep(500);
 		}
 		startTime = System.currentTimeMillis();
+		if(Gui.fast) Mouse.setSpeed(Mouse.Speed.FAST);
+		if(Gui.veryFast) Mouse.setSpeed(Mouse.Speed.VERY_FAST);
 	}
     
     public long startTime;

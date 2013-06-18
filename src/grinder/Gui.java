@@ -22,29 +22,13 @@ public class Gui extends JFrame {
 
 	private JPanel contentPane;
 	public static boolean start = false;
+	public static boolean fast = false;
+	public static boolean veryFast = false;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Gui frame = new Gui();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public Gui() {
 		setTitle("Righteous Grinder");
 
+		setResizable(false);
 		setBounds(100, 100, 464, 103);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -98,8 +82,8 @@ public class Gui extends JFrame {
             	 Vars.CRUSHED = Vars.GOAT_HORN_DUST;
              }
              
-             if (comboBox_1.getSelectedItem().equals("Fast")) Mouse.setSpeed(Mouse.Speed.FAST);
-             if (comboBox_1.getSelectedItem().equals("Very Fast")) Mouse.setSpeed(Mouse.Speed.VERY_FAST);
+             if (comboBox_1.getSelectedItem().toString().matches("Fast")) fast = true;
+             if (comboBox_1.getSelectedItem().toString().matches("Very Fast")) veryFast = true;
              
              if (!chckbxAntiban.isSelected()) Vars.antibanOn = false;
              
@@ -108,9 +92,6 @@ public class Gui extends JFrame {
              Gui.this.setVisible(false);
             }
         });
-		
-		setVisible(true);
-		setResizable(false);
 	}
 
 }
