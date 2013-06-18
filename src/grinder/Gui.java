@@ -58,38 +58,38 @@ public class Gui extends JFrame {
 		
 		JButton btnStart = new JButton("Start");
 		panel.add(btnStart);
-        btnStart.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent paramActionEvent) {
-             if (comboBox.getSelectedItem().equals("Chocolate Bar")) {
-            	 Vars.UNCRUSHED = Vars.CHOCOLATE_BAR;
-            	 Vars.CRUSHED = Vars.CHOCOLATE_DUST;
-            	 Vars.ACTION = "Powder";
-             }
-             if (comboBox.getSelectedItem().equals("Blue Dragon Scales")) {
-            	 Vars.UNCRUSHED = Vars.BD_SCALES;
-            	 Vars.CRUSHED = Vars.DRAGON_SCALE_DUST;
-             }
-             if (comboBox.getSelectedItem().equals("Unicorn Horn")) {
-            	 Vars.UNCRUSHED = Vars.UNICORN_HORN;
-            	 Vars.CRUSHED = Vars.UNICORN_DUST;
-             }
-             if (comboBox.getSelectedItem().equals("Kebbit Teeth")) {
-            	 Vars.UNCRUSHED = Vars.KEBBIT_TEETH;
-            	 Vars.CRUSHED = Vars.KEBBIT_TEETH_DUST;
-             }
-             if (comboBox.getSelectedItem().equals("Desert Goat Horn")) {
-            	 Vars.UNCRUSHED = Vars.DESERT_GOAT_HORN;
-            	 Vars.CRUSHED = Vars.GOAT_HORN_DUST;
-             }
+        	btnStart.addActionListener(new ActionListener() {
+            	public void actionPerformed(ActionEvent paramActionEvent) {
+             		if (comboBox.getSelectedItem().equals("Chocolate Bar")) {
+            	 		Vars.UNCRUSHED = Vars.CHOCOLATE_BAR;
+            	 		Vars.CRUSHED = Vars.CHOCOLATE_DUST;
+            	 		Vars.ACTION = "Powder";
+             		}
+             		if (comboBox.getSelectedItem().equals("Blue Dragon Scales")) {
+            	 		Vars.UNCRUSHED = Vars.BD_SCALES;
+            	 		Vars.CRUSHED = Vars.DRAGON_SCALE_DUST;
+             		}
+             		if (comboBox.getSelectedItem().equals("Unicorn Horn")) {
+            	 		Vars.UNCRUSHED = Vars.UNICORN_HORN;
+            	 		Vars.CRUSHED = Vars.UNICORN_DUST;
+             		}
+             		if (comboBox.getSelectedItem().equals("Kebbit Teeth")) {
+            			 Vars.UNCRUSHED = Vars.KEBBIT_TEETH;
+            	 		Vars.CRUSHED = Vars.KEBBIT_TEETH_DUST;
+             		}
+             		if (comboBox.getSelectedItem().equals("Desert Goat Horn")) {
+            	 		Vars.UNCRUSHED = Vars.DESERT_GOAT_HORN;
+            	 		Vars.CRUSHED = Vars.GOAT_HORN_DUST;
+             		}
              
-             if (comboBox_1.getSelectedItem().toString().matches("Fast")) fast = true;
-             if (comboBox_1.getSelectedItem().toString().matches("Very Fast")) veryFast = true;
+             		if (comboBox_1.getSelectedItem().toString().matches("Fast")) fast = true;
+             		if (comboBox_1.getSelectedItem().toString().matches("Very Fast")) veryFast = true;
              
-             if (!chckbxAntiban.isSelected()) Vars.antibanOn = false;
+             		if (!chckbxAntiban.isSelected()) Vars.antibanOn = false;
              
-             Vars.PROFIT = GeItem.lookup(Vars.CRUSHED).getPrice() - GeItem.lookup(Vars.UNCRUSHED).getPrice();
-             start = true; 
-             Gui.this.setVisible(false);
+             		Vars.PROFIT = GeItem.lookup(Vars.CRUSHED).getPrice() - GeItem.lookup(Vars.UNCRUSHED).getPrice();
+             		start = true; 
+             		Gui.this.setVisible(false);
             }
         });
 	}
