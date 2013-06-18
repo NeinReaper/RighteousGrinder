@@ -21,19 +21,20 @@ public class Antiban extends Node {
 
     @Override
     public void execute() {
-    	private int j = Random.nextInt(1, 3);
-    	if (j == 1) {
-    		Vars.status = "Antiban 1";
-    		Camera.setAngle(Random.nextInt(0, 360));
-    	} else if (j == 2) {
-    		Vars.status = "Antiban 2";
-    		Tabs.STATS.open();
-    		Task.sleep(3000, 5000);
-    	} else if (j == 3) {
-    		Vars.status = "Antiban 3";
-    		Mouse.move(Random.nextInt(0, 770), Random.nextInt(0, 559));
+    	int rand = Random.nextInt(1, 3);
+    	Vars.status = "Antiban " + rand;
+    	switch (rand) {
+    		case 1:
+    			Camera.setAngle(Random.nextInt(0, 360));
+    			break;
+    		case 2:
+    	    	Tabs.STATS.open();
+    	    	Task.sleep(3000, 5000);
+    			break;
+    		case 3:
+    			Mouse.move(Random.nextInt(0, 770), Random.nextInt(0, 559));
+    			break;
     	}
-    	
     }
     
 }

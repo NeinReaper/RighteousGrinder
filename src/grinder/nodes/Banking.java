@@ -2,6 +2,7 @@ package grinder.nodes;
 
 import grinder.Vars;
 
+import org.powerbot.core.bot.handlers.ScriptHandler;
 import org.powerbot.core.script.job.Task;
 import org.powerbot.core.script.job.state.Node;
 import org.powerbot.game.api.methods.Game;
@@ -32,10 +33,9 @@ public class Banking extends Node {
     		} else if (Bank.getItemCount(Vars.UNCRUSHED) > 0) {
     			Vars.status = "Withdrawing Items";
     			Bank.withdraw(Vars.UNCRUSHED, 0);
-    		} else if (Bank.getItemCount(Vars.UNCRUSHED) < 1) {
+    		} else {
     			Vars.status = "Logging Out";
-    			Bank.close();
-    			Game.logout(true);
+    			if (Bank.close()) Game.logout(true);;
     			Vars.done = true;
     		}
     	} else {
