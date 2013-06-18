@@ -33,12 +33,12 @@ public class Grind extends Node {
 			} else if (Widgets.get(1370).validate() && Widgets.get(1370).getChild(40).getChild(0) != null) {
 				Vars.status = "Clicking Grind";
 				 if(Widgets.get(1370).getChild(40).getChild(0).click(true)) {
-						Timer timer = new Timer(3000);
-						while (timer.isRunning() && Players.getLocal().isIdle()) {
-							if (!Players.getLocal().isIdle()) timer.reset();
-							sleep(100, 300);
-						}
-						Vars.status = "Grinding";
+					Timer timer = new Timer(3000);
+					while (timer.isRunning() && Players.getLocal().isIdle()) {
+						if (!Players.getLocal().isIdle()) timer.reset();
+						sleep(100, 300);
+					}
+					Vars.status = "Grinding";
 				 }
 				Task.sleep(500);
 			}
