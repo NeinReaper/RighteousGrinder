@@ -47,8 +47,4 @@ public class Grind extends Node {
 			Bank.close();
 		}
     }
-    
-    public void waitUntil(boolean a) {
-
-    }
 }
