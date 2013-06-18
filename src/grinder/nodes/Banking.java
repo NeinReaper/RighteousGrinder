@@ -14,7 +14,7 @@ import org.powerbot.game.api.methods.widget.Camera;
 
 public class Banking extends Node {
 	
-	private int invCount;
+    private int invCount;
 
     @Override
     public boolean activate() {
