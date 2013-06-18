@@ -32,12 +32,12 @@ public class RighteousGrinder extends ActiveScript implements PaintListener{
 	@Override
     public void onRepaint(Graphics g1) {
 		
-		  long millis = System.currentTimeMillis() - startTime;
-		  long hours = millis / (1000 * 60 * 60);
-		  millis -= hours * (1000 * 60 * 60);
-		  long minutes = millis / (1000 * 60);
-		  millis -= minutes * (1000 * 60);
-		  long seconds = millis / 1000;
+	  long millis = System.currentTimeMillis() - startTime;
+	  long hours = millis / (1000 * 60 * 60);
+	  millis -= hours * (1000 * 60 * 60);
+	  long minutes = millis / (1000 * 60);
+	  millis -= minutes * (1000 * 60);
+	  long seconds = millis / 1000;
 	      
           int runTime = (int) (System.currentTimeMillis() - startTime);
           int profitPerHour = (int) ((Vars.PROFIT*Vars.numCrushed) * 3600000.0 / runTime);
