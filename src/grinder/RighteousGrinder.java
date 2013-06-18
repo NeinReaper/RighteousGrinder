@@ -33,10 +33,6 @@ public class RighteousGrinder extends ActiveScript implements PaintListener{
 		}
 		startTime = System.currentTimeMillis();
 	}
-	
-	public void onStop() {
-		
-	}
     
     public long startTime;
     
