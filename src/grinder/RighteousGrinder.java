@@ -62,8 +62,6 @@ public class RighteousGrinder extends ActiveScript implements PaintListener{
           
   }
     
-
-
 	private final Node[] jobs = { new Antiban(), new Banking(), new Grind()};
 	
 	@Override
