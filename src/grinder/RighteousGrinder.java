@@ -32,22 +32,22 @@ public class RighteousGrinder extends ActiveScript implements PaintListener{
 	@Override
     public void onRepaint(Graphics g1) {
 		
-	  long millis = System.currentTimeMillis() - startTime;
-	  long hours = millis / (1000 * 60 * 60);
-	  millis -= hours * (1000 * 60 * 60);
-	  long minutes = millis / (1000 * 60);
-	  millis -= minutes * (1000 * 60);
-	  long seconds = millis / 1000;
+		  long millis = System.currentTimeMillis() - startTime;
+		  long hours = millis / (1000 * 60 * 60);
+		  millis -= hours * (1000 * 60 * 60);
+		  long minutes = millis / (1000 * 60);
+		  millis -= minutes * (1000 * 60);
+		  long seconds = millis / 1000;
 	      
           int runTime = (int) (System.currentTimeMillis() - startTime);
           int profitPerHour = (int) ((Vars.PROFIT*Vars.numCrushed) * 3600000.0 / runTime);
           int crushedPerHour = (int) (Vars.numCrushed * 3600000.0 / runTime);
           
-	  Graphics2D g = (Graphics2D)g1;  
-	  g.setColor(Color.BLACK);
-	  g.fillRect(362, 53, 155, 46);
-  	  g.setColor(Color.WHITE);
-	  g.drawRect(362, 53, 155, 46);
+          Graphics2D g = (Graphics2D)g1;  
+          g.setColor(Color.BLACK);
+          g.fillRect(362, 53, 155, 46);
+          g.setColor(Color.WHITE);
+          g.drawRect(362, 53, 155, 46);
           g.drawString("Time Running:  " + hours + ": " + minutes + ": " + seconds, 365, 64);
           g.drawString("Status:  " + Vars.status, 365, 75);
           g.drawString("Profit:  " + Vars.PROFIT*Vars.numCrushed + " (" + profitPerHour + "/ph)", 365, 86);
@@ -74,7 +74,9 @@ public class RighteousGrinder extends ActiveScript implements PaintListener{
 				}
 			}
 		}
+		
 		if (Vars.done) stop();
+		
 		return 300;
 }
 }

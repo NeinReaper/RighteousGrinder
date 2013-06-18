@@ -34,13 +34,8 @@ public class Banking extends Node {
     			Bank.withdraw(Vars.UNCRUSHED, 0);
     		} else if (Bank.getItemCount(Vars.UNCRUSHED) < 1) {
     			Vars.status = "Logging Out";
-    			while (Game.isLoggedIn()) {
-    				if (Bank.isOpen()) {
-    					Bank.close();
-    				} else {
-    					Game.logout(true);
-    				}
-    			}
+    			Bank.close();
+    			Game.logout(true);
     			Vars.done = true;
     		}
     	} else {

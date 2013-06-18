@@ -2,7 +2,6 @@ package grinder.nodes;
 
 import grinder.Vars;
 
-import org.powerbot.core.script.job.Task;
 import org.powerbot.core.script.job.state.Node;
 import org.powerbot.game.api.methods.Widgets;
 import org.powerbot.game.api.methods.interactive.Players;
@@ -31,7 +30,7 @@ public class Grind extends Node {
 					}
 				}
 			} else if (Widgets.get(1370).validate() && Widgets.get(1370).getChild(40).getChild(0) != null) {
-				Vars.status = "Clicking Grind";
+				 Vars.status = "Clicking Grind";
 				 if(Widgets.get(1370).getChild(40).getChild(0).click(true)) {
 					Timer timer = new Timer(3000);
 					while (timer.isRunning() && Players.getLocal().isIdle()) {
@@ -40,7 +39,6 @@ public class Grind extends Node {
 					}
 					Vars.status = "Grinding";
 				 }
-				Task.sleep(500);
 			}
 		} else {
 			Vars.status = "Closing Bank";
