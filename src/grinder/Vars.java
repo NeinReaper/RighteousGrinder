@@ -20,6 +20,6 @@ public class Vars {
 	public static int profit;
 	public static boolean antibanOn = true;
 	public static boolean done = false;
-    public static String status = "Starting Up...";
+    	public static String status = "Starting Up...";
     
 }
