@@ -14,8 +14,9 @@ public class Antiban extends Node {
 
     @Override
     public boolean activate() {
-		return Vars.antibanOn && !Players.getLocal().isIdle() && Random.nextInt(0, 500) == 250;
-        
+		return Vars.antibanOn 
+			&& !Players.getLocal().isIdle() 
+			&& Random.nextInt(0, 500) == 250;
     }
 
     @Override
