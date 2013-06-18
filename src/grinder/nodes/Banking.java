@@ -2,7 +2,6 @@ package grinder.nodes;
 
 import grinder.Vars;
 
-import org.powerbot.core.bot.handlers.ScriptHandler;
 import org.powerbot.core.script.job.Task;
 import org.powerbot.core.script.job.state.Node;
 import org.powerbot.game.api.methods.Game;
@@ -19,20 +18,20 @@ public class Banking extends Node {
 
     @Override
     public boolean activate() {
-		return !Inventory.contains(Vars.UNCRUSHED);
+		return !Inventory.contains(Vars.unCrushed);
     }
 
     @Override
     public void execute() {
     	if (Bank.isOpen()) {
-    		if(Inventory.contains(Vars.CRUSHED)) {
+    		if(Inventory.contains(Vars.crushed)) {
     			Vars.status = "Despositing Items";
-    			invCount = Inventory.getCount(Vars.CRUSHED);
+    			invCount = Inventory.getCount(Vars.crushed);
     			if(Bank.depositInventory()) Vars.numCrushed += invCount;
     			Task.sleep(500);
-    		} else if (Bank.getItemCount(Vars.UNCRUSHED) > 0) {
+    		} else if (Bank.getItemCount(Vars.unCrushed) > 0) {
     			Vars.status = "Withdrawing Items";
-    			Bank.withdraw(Vars.UNCRUSHED, 0);
+    			Bank.withdraw(Vars.unCrushed, 0);
     		} else {
     			Vars.status = "Logging Out";
     			if (Bank.close()) Game.logout(true);;

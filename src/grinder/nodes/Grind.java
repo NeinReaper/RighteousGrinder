@@ -14,7 +14,7 @@ public class Grind extends Node {
     @Override
     public boolean activate() {
 		return Players.getLocal().isIdle() 
-				&& Inventory.contains(Vars.UNCRUSHED);
+				&& Inventory.contains(Vars.unCrushed);
     }
 
     @Override
@@ -22,7 +22,7 @@ public class Grind extends Node {
 		if (!Bank.isOpen()) {
 			if (!Widgets.get(1370).validate()) {
 				Vars.status = "Clicking Item";
-				if (Inventory.getItem(Vars.UNCRUSHED).getWidgetChild().interact(Vars.ACTION)) {
+				if (Inventory.getItem(Vars.unCrushed).getWidgetChild().interact(Vars.action)) {
 					Timer timer = new Timer(3000);
 					while (timer.isRunning() && !Widgets.get(1370).validate()) {
 						sleep(100, 300);

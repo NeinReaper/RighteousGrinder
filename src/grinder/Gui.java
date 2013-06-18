@@ -61,25 +61,25 @@ public class Gui extends JFrame {
         	btnStart.addActionListener(new ActionListener() {
             	public void actionPerformed(ActionEvent paramActionEvent) {
              		if (comboBox.getSelectedItem().equals("Chocolate Bar")) {
-            	 		Vars.UNCRUSHED = Vars.CHOCOLATE_BAR;
-            	 		Vars.CRUSHED = Vars.CHOCOLATE_DUST;
-            	 		Vars.ACTION = "Powder";
+            	 		Vars.unCrushed = Vars.CHOCOLATE_BAR;
+            	 		Vars.crushed = Vars.CHOCOLATE_DUST;
+            	 		Vars.action = "Powder";
              		}
              		if (comboBox.getSelectedItem().equals("Blue Dragon Scales")) {
-            	 		Vars.UNCRUSHED = Vars.BD_SCALES;
-            	 		Vars.CRUSHED = Vars.DRAGON_SCALE_DUST;
+            	 		Vars.unCrushed = Vars.BD_SCALES;
+            	 		Vars.crushed = Vars.DRAGON_SCALE_DUST;
              		}
              		if (comboBox.getSelectedItem().equals("Unicorn Horn")) {
-            	 		Vars.UNCRUSHED = Vars.UNICORN_HORN;
-            	 		Vars.CRUSHED = Vars.UNICORN_DUST;
+            	 		Vars.unCrushed = Vars.UNICORN_HORN;
+            	 		Vars.crushed = Vars.UNICORN_DUST;
              		}
              		if (comboBox.getSelectedItem().equals("Kebbit Teeth")) {
-            			 Vars.UNCRUSHED = Vars.KEBBIT_TEETH;
-            	 		Vars.CRUSHED = Vars.KEBBIT_TEETH_DUST;
+            			 Vars.unCrushed = Vars.KEBBIT_TEETH;
+            	 		Vars.crushed = Vars.KEBBIT_TEETH_DUST;
              		}
              		if (comboBox.getSelectedItem().equals("Desert Goat Horn")) {
-            	 		Vars.UNCRUSHED = Vars.DESERT_GOAT_HORN;
-            	 		Vars.CRUSHED = Vars.GOAT_HORN_DUST;
+            	 		Vars.unCrushed = Vars.DESERT_GOAT_HORN;
+            	 		Vars.crushed = Vars.GOAT_HORN_DUST;
              		}
              
              		if (comboBox_1.getSelectedItem().toString().matches("Fast")) fast = true;
@@ -87,7 +87,7 @@ public class Gui extends JFrame {
              
              		if (!chckbxAntiban.isSelected()) Vars.antibanOn = false;
              
-             		Vars.PROFIT = GeItem.lookup(Vars.CRUSHED).getPrice() - GeItem.lookup(Vars.UNCRUSHED).getPrice();
+             		Vars.profit = GeItem.lookup(Vars.crushed).getPrice() - GeItem.lookup(Vars.unCrushed).getPrice();
              		start = true; 
              		Gui.this.setVisible(false);
             }

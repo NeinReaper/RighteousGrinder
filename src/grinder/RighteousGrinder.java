@@ -40,7 +40,7 @@ public class RighteousGrinder extends ActiveScript implements PaintListener{
 	  long seconds = millis / 1000;
 	      
           int runTime = (int) (System.currentTimeMillis() - startTime);
-          int profitPerHour = (int) ((Vars.PROFIT*Vars.numCrushed) * 3600000.0 / runTime);
+          int profitPerHour = (int) ((Vars.profit*Vars.numCrushed) * 3600000.0 / runTime);
           int crushedPerHour = (int) (Vars.numCrushed * 3600000.0 / runTime);
           
           Graphics2D g = (Graphics2D)g1;  
@@ -50,7 +50,7 @@ public class RighteousGrinder extends ActiveScript implements PaintListener{
           g.drawRect(362, 53, 155, 46);
           g.drawString("Time Running:  " + hours + ": " + minutes + ": " + seconds, 365, 64);
           g.drawString("Status:  " + Vars.status, 365, 75);
-          g.drawString("Profit:  " + Vars.PROFIT*Vars.numCrushed + " (" + profitPerHour + "/ph)", 365, 86);
+          g.drawString("Profit:  " + Vars.profit*Vars.numCrushed + " (" + profitPerHour + "/ph)", 365, 86);
           g.drawString("# Crushed:  " + Vars.numCrushed + " (" + crushedPerHour + "/ph)", 365, 97);
           g.setColor(Color.RED);
           g.drawLine((Mouse.getLocation().x - 8), (Mouse.getLocation().y), (Mouse.getLocation().x + 8), (Mouse.getLocation().y));

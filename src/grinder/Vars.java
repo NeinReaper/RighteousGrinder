@@ -12,14 +12,14 @@ public class Vars {
 	public static final int DESERT_GOAT_HORN = 9735;
 	public static final int GOAT_HORN_DUST = 9736;
 	
-	public static int UNCRUSHED;
-	public static int CRUSHED;
-	public static String ACTION = "Grind";
+	public static int unCrushed;
+	public static int crushed;
+	public static String action = "Grind";
 	
 	public static int numCrushed = 0;
-	public static int PROFIT;
+	public static int profit;
 	public static boolean antibanOn = true;
 	public static boolean done = false;
-    	public static String status = "Starting Up...";
+    public static String status = "Starting Up...";
     
 }
