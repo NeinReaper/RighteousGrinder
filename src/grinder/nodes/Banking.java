@@ -46,7 +46,7 @@ public class Banking extends Node {
     	} else {
     		Vars.status = "Opening Bank";
     		if (NPCs.getNearest(Bank.BANK_NPC_IDS) != null && NPCs.getNearest(Bank.BANK_NPC_IDS).isOnScreen()) {
-    		Bank.open();
+    			Bank.open();
     		} else if (NPCs.getNearest(Bank.BANK_NPC_IDS) != null){
     			Camera.turnTo(NPCs.getNearest(Bank.BANK_NPC_IDS));
     			if (NPCs.getNearest(Bank.BANK_NPC_IDS) != null && !NPCs.getNearest(Bank.BANK_NPC_IDS).isOnScreen()) {
