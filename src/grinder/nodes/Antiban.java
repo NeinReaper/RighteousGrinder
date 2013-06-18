@@ -20,7 +20,7 @@ public class Antiban extends Node {
 
     @Override
     public void execute() {
-    	int j = Random.nextInt(1, 3);
+    	private int j = Random.nextInt(1, 3);
     	if (j == 1) {
     		Vars.status = "Antiban 1";
     		Camera.setAngle(Random.nextInt(0, 360));
